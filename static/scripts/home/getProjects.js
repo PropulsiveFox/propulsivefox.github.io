@@ -9,7 +9,7 @@ function getContents() {
 
 function getDirsExclude() {
 	return new Promise((resolve, reject) => {
-		fetch('directories.exclude.json')
+		fetch('directories_exclude.json')
 			.then(response => response.json())
 			.then(dirsExclude => resolve(dirsExclude))
 			.catch(err => reject(err));

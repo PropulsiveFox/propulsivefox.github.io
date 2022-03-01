@@ -1,0 +1,49 @@
+:root {
+	--light-bg: #fff7f7;
+	--light-t: #070707;
+	--light-g: #909090;
+
+	--dark-bg: #1f1f27;
+	--dark-t: #f7f7f7;
+	--dark-g: #a0a0a0;
+
+	--bg: var(--light-bg);
+	--t: var(--light-t);
+	--g: var(--light-g);
+}
+@media(prefers-color-scheme: dark) {
+	:root {
+		--bg: var(--dark-bg);
+		--t: var(--dark-t);
+		--g: var(--dark-g);
+	}
+}
+body.light {
+	--bg: var(--light-bg);
+	--t: var(--light-t);
+	--g: var(--light-g);
+}
+body.dark {
+	--bg: var(--dark-bg);
+	--t: var(--dark-t);
+	--g: var(--dark-g);
+}
+
+body {
+	margin: 0;
+	padding: 0;
+
+	width: auto;
+	height: auto;
+	min-height: 100vh;
+
+	font-size: 16px;
+	font-family: sans-serif;
+
+	background-color: var(--bg);
+	color: var(--t);
+}
+
+.gray {
+	color: var(--g);
+}

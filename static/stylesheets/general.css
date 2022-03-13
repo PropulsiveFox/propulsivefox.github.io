@@ -1,19 +1,35 @@
 :root {
 	--light-bg: #fff7f7;
+	--light-bg-r: 255;
+	--light-bg-g: 247;
+	--light-bg-b: 247;
+	--light-bg-a: 0.6;
 	--light-t: #070707;
 	--light-g: #909090;
 
 	--dark-bg: #1f1f27;
+	--dark-bg-r: 31;
+	--dark-bg-g: 31;
+	--dark-bg-b: 39;
+	--dark-bg-a: 0.8;
 	--dark-t: #f7f7f7;
 	--dark-g: #a0a0a0;
 
 	--bg: var(--light-bg);
+	--bg-r: var(--light-bg-r);
+	--bg-g: var(--light-bg-g);
+	--bg-b: var(--light-bg-b);
+	--bg-a: var(--light-bg-a);
 	--t: var(--light-t);
 	--g: var(--light-g);
 }
 @media(prefers-color-scheme: dark) {
 	:root {
 		--bg: var(--dark-bg);
+		--bg-r: var(--dark-bg-r);
+		--bg-g: var(--dark-bg-g);
+		--bg-b: var(--dark-bg-b);
+		--bg-a: var(--dark-bg-a);
 		--t: var(--dark-t);
 		--g: var(--dark-g);
 	}
@@ -44,6 +60,13 @@ body {
 	color: var(--t);
 }
 
-.gray {
-	color: var(--g);
+.gray { color: var(--g); }
+
+.container-xl {
+	max-width: 1280px;
 }
+
+.mx-auto { margin-left: auto; margin-right: auto; }
+
+.px-16 { padding-left: 16px; padding-right: 16px; }
+.px-8 { padding-left: 8px; padding-right: 8px; }

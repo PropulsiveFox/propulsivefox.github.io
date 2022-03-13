@@ -5,12 +5,60 @@
 		<meta name="viewport" content="width=device-width">
 		<title>Projects | PropulsiveFox</title>
 		<link rel="canonical" href="https://projects.propulsivefox.space/">
+		<script defer src="/static/scripts/icons.js" id="icons-script"></script>
 
 		<link rel="stylesheet" href="/static/stylesheets/general.css">
-		
-		<script defer src="/static/scripts/home/getProjects.js"></script>
+		<link rel="stylesheet" href="/static/stylesheets/home.css">
+
+		<script defer src="/static/scripts/home/projects.js"></script>
+		<script defer src="/static/scripts/home/filterMenu.js"></script>
+		<script defer src="/static/scripts/home/main.js"></script>
 	</head>
 	<body>
-		This website is not complete. Currently public for structuring purpose only.
+		<header>
+			<div id="header-background">
+			</div>
+			<div id="header-nav">
+				<div class="container-xl mx-auto px-16" id="header-nav-container">
+					<a href="https://propulsivefox.space">
+						<img src="/static/icons/icon-128x128.png" alt="PropulsiveFox" width="24px" height="24px">
+					</a>
+				</div>
+			</div>
+			<div id="header-filter">
+				<div class="container-xl mx-auto px-16" id="header-filter-container">
+					<div id="filter-positioner">
+						<button id="filter-button">
+							<svg width="24" height="24" id="filter-button-icon">
+								<polygon points="0 0 0 0 12 0 24 0 24 0 14 9 14 18 14 18 12 21 10 24 10 24 10 9">
+									<animate id="filter-button-icon-open" fill="freeze" dur="83ms" attributeName="points" to="
+									0 2.83 2.83 0 12 9.17 21.17 0 24 2.83 14.83 12 24 21.17 21.17 24 12 14.83 2.83 24 0 21.17 9.17 12" />
+									<animate id="filter-button-icon-close" fill="freeze" dur="83ms" attributeName="points" to="
+									0 0 0 0 12 0 24 0 24 0 14 9 14 18 14 18 12 21 10 24 10 24 10 9" />
+								</polygon>
+							</svg>
+						</button>
+						<div id="filter-menu" tabindex="-1">
+							<div>Sizes</div>
+							<br>
+							<div class="filter-toggle filters-icon sprt0 sprt3x" id="size-small"></div>
+							<div class="filter-toggle filters-icon sprt1 sprt3x" id="size-medium"></div>
+							<div class="filter-toggle filters-icon sprt2 sprt3x" id="size-large"></div>
+							<br>
+							<br>
+							<div>Types</div>
+							<br>
+							<div class="filter-toggle filters-icon sprt3 sprt3x" id="type-tool"></div>
+							<div class="filter-toggle filters-icon sprt4 sprt3x" id="type-demo"></div>
+							<div class="filter-toggle filters-icon sprt5 sprt3x" id="type-game"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="container-xl mx-auto px-16">
+			<div id="projects-grid">
+			</div>
+		</div>
 	<body>
 </html>

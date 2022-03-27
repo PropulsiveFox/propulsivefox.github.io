@@ -181,13 +181,13 @@ header>*>* { height: 40px; }
 
 	display: grid;
 	grid-template:
-		"i t" 100%
+		"i t" max-content
 		"i f" 32px
 		"i d" 1fr
 		/ auto 1fr;
 	gap: 8px 8px;
 
-	background: rgb(calc(1.6 * var(--bg-r)), calc(1.6 * var(--bg-g)), calc(1.6 * var(--bg-b)));
+	background: rgba(127, 127, 127, 0.1);
 }
 .project img {
 	grid-area: i;
@@ -205,6 +205,7 @@ header>*>* { height: 40px; }
 	column-gap: 4px;
 }
 .project .published	{
+	grid-area: d;
 	color: var(--g);
 	font-size: 0.75rem;
 	margin-left: auto;

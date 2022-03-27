@@ -2,10 +2,14 @@ class AnimationTime {
 	#currentTime;
 	#prevTime;
 	#deltaTime;
-	constructor() {
-		this.#currentTime = Date.now();
-		this.#prevTime = Date.now();
+	#maxDeltaTime;
+	#reset;
+	constructor(maxDeltaTime = 0.05) {
+		this.#currentTime = 0;
+		this.#prevTime = 0;
 		this.#deltaTime = 0;
+		this.#maxDeltaTime = maxDeltaTime;
+		this.#reset = false;
 	}
 
 	get currentTime() {
@@ -18,9 +22,17 @@ class AnimationTime {
 		return this.#deltaTime;
 	}
 
-	update() {
-		this.#prevTime = this.#currentTime;
-		this.#currentTime = Date.now();
-		this.#deltaTime = (this.#currentTime - this.#prevTime) / 1000;
+	update(timestamp) {
+		if (this.#reset) {
+			this.#prevTime = timestamp;
+			this.#reset = false;
+		}
+		else this.#prevTime = this.#currentTime;
+		this.#currentTime = timestamp;
+		this.#deltaTime = Math.min(this.#maxDeltaTime, (this.#currentTime - this.#prevTime) / 1000);
+	}
+	resume() {
+		this.#reset = true;
 	}
 }
+export default AnimationTime;

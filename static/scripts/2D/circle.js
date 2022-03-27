@@ -1,56 +1,37 @@
-/**
- * Class for 2D circle
- * @class
- * @requires /static/2D/vector.js
- */
+import Vector from "./vector.js";
+
 class Circle {
 	/**
-	 * Create a Circle
-	 * @param {Vector} center 
+	 * @param {number} x 
+	 * @param {number} y 
 	 * @param {number} radius 
 	 */
-	constructor(center, radius) {
-		if (!(center instanceof Vector)) throw Vector.typeError(center);
-		if (typeof radius !== 'number') throw new TypeError(radius + 'is not a number');
-		this.center = Vector.duplicate(center);
+	constructor(x = 0, y = 0, radius = 1) {
+		this.position = new Vector(x, y);
 		this.radius = radius;
 	}
 
-	get x() { return this.center.x; }
-	set x(x) { this.center.x = x; }
-	get y() { return this.center.y; }
-	set y(y) { this.center.y = y; }
+	get center() { return this.position; }
+	get x() { return this.position.x; }
+	set x(x) { this.position.x = x; }
+	get y() { return this.position.y; }
+	set y(y) { this.position.y = y; }
 
-	toString() { return '[object Circle]'; }
+	toString() { return `[object Circle(${this.x}, ${this.y}, ${this.radius})]`; }
+	/**
+	 * @param {Circle} circle 
+	 * @returns {Circle}
+	 */
+	static dupe(circle) { return new Circle(circle.x, circle.y, circle.radius); }
 
-	contains(shape) {
-		if (shape instanceof Circle) {
-			if (Vector.distance(this.center, shape.center) <= this.radius - shape.radius) {
-				return true;
-			} else return false;
-		} else if (shape instanceof Rect) {
-			let dots = [
-				new Vector(shape.x, shape.y),
-				new Vector(shape.x, shape.yMax),
-				new Vector(shape.xMax, shape.y),
-				new Vector(shape.xMax, shape.yMax)
-			];
-			return dots.every(dot => Vector.distance(this.center, dot) <= this.radius);
-		} else if (Vector.isVector(shape)) {
-			return Vector.distance(this.center, shape) <= this.radius;
-		} else {
-			throw new TypeError(shape + ' is not supported in Circle.contains()');
-		}
-	}
-
+	/**
+	 * @param {CanavsRenderingContext2D} ctx 
+	 */
 	draw(ctx) {
-		if (!(ctx instanceof CanvasRenderingContext2D)) {
-			throw TypeError('need CanvasRenderingcontext2D');
-		}
-
 		ctx.beginPath();
-		ctx.arc(this.center.x, this.center.y, this.radius, 0, 2 * Math.PI, true);
+		ctx.arc(this.position.x, this.positionn.y, this.radius, 0, 2 * Math.PI, true);
 		ctx.stroke();
 		ctx.fill();
 	}
 }
+export default Circle;

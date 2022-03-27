@@ -1,4 +1,10 @@
+import Rect from "./rect.js";
+
 class QuadTree {
+	/**
+	 * @param {Rect} boundary 
+	 * @param {number} capacity 
+	 */
 	constructor(boundary, capacity) {
 		this.boundary = boundary;
 		this.capacity = capacity;
@@ -105,3 +111,4 @@ class QuadTree {
 		}
 	}
 }
+export default QuadTree;

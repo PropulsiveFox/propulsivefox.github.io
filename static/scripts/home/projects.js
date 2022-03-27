@@ -42,7 +42,9 @@ class Project {
 				.then(response => response.json())
 				.then(json => {
 					let img = a.querySelector('img');
-					img.removeAttribute('class');
+					img.onload = () => {
+						img.removeAttribute('class');
+					}
 					img.src = json.image;
 
 					let name = a.querySelector('.project-name');

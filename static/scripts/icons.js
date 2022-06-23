@@ -28,7 +28,7 @@ const icons = [
 		tagName: 'link',
 		rel: 'mask-icon',
 		href: '/static/icons/safari-pinned-tab.svg',
-		color: '#3fbfff'
+		color: '#2fafef'
 	},
 	{
 		tagName: 'link',
@@ -44,16 +44,6 @@ const icons = [
 		tagName: 'meta',
 		name: 'application-name',
 		content: 'Projects.PropulsiveFox'
-	},
-	{
-		tagName: 'meta',
-		name: 'msapplication-TileColor',
-		content: '#3fbfff'
-	},
-	{
-		tagName: 'meta',
-		name: 'msapplication-config',
-		content: '/static/icons/browserconfig.xml'
 	},
 	{
 		tagName: 'meta',
